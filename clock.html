@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Clock Using Pure JS</title>
+    <link href="img/clock.jpg" rel="icon">
+    <style>#clockcontsiner{
+        position: relative;
+        margin: auto;
+        height: 55vw;
+        width: 53vw;
+        background:url(../img/clock.jpg) no-repeat;
+        background-size: 100%;
+    }
+    
+    #hour, #minute, #second{
+        position: absolute;
+        background: black;
+        border-radius: 10px;
+        transform-origin: bottom;
+    }
+    #hour{
+        width: 1.5122%;
+        height: 21%;
+        top: 25%;
+        left: 49.4%;
+        opacity: 0.8;
+    }
+    #minute{
+        width: 1.5%;
+        height: 28%;
+        top: 18%;
+        left: 49.5%;
+        opacity: 0.8;
+    }
+    #second{
+        width: 1%;
+        height: 33%;
+        top: 13%;
+        left: 49.6%;
+        opacity: 0.8;
+    }</style>
+
+</head>
+<body>
+    <div id="clockcontsiner">
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+    </div>
+    <script>setInterval(() => {
+        d = new Date();
+        htime = d.getHours();
+        mtime = d.getMinutes();
+        stime = d.getSeconds();
+        hrotation = 30*htime + mtime/2;
+        mrotation = 6*mtime;
+        srotation = 6*stime;
+    
+        hour.style.transform = `rotate(${hrotation}deg)`;
+        minute.style.transform = `rotate(${mrotation}deg)`;
+        second.style.transform = `rotate(${srotation}deg)`;
+    }, 1000);
+    alert("Please wate.....")
+    </script>
+</body>
+</html>
